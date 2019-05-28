@@ -30,12 +30,22 @@ export default class App extends Component {
         <View style={styles.container}>
           <Text>Welcome to React Native!</Text>
 
-          <Button title={"Primary"} />
-          <Button title={"Danger"} />
-          <Button title={"Cancel"} />
-          <Button title={"Info"} />
-          <Button title={"Success"} />
-          <Button title={"Fail"} />
+          <Button type={"primary"} title={"Primary"} />
+          <View style={{ height: 10 }} />
+
+          <Button type={"danger"} title={"Danger"} />
+          <View style={{ height: 10 }} />
+
+          <Button type={"primary"} warning title={"Cancel"} />
+          <View style={{ height: 10 }} />
+
+          <Button type={"success"} title={"Info"} />
+          <View style={{ height: 10 }} />
+
+          <Button type={"outline"} title={"Success"} />
+          <View style={{ height: 10 }} />
+
+          <Button type={"info"} title={"Fail"} />
 
           {/* <ThemeContext.Consumer>
             {({ toggleTheme }) => (
