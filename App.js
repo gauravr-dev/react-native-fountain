@@ -29,6 +29,16 @@ export default class App extends Component {
       >
         <View style={styles.container}>
           <Text>Welcome to React Native!</Text>
+          <Button type={"outline"} loading>
+            Primary
+          </Button>
+          <View style={{ height: 10 }} />
+
+          <Button type={"rounded"}>rounded</Button>
+          <View style={{ height: 10 }} />
+
+          <Button type={"circle"}>circle</Button>
+          <View style={{ height: 10 }} />
 
           <Button type={"primary"} title={"Primary"} />
           <View style={{ height: 10 }} />
