@@ -9,6 +9,8 @@ import {
 } from "react-native";
 
 import Button from "./lib/Button";
+import FTTextInput from "./lib/TextInput/index";
+
 import {
   Provider as ThemeProvider,
   Consumer,
@@ -29,7 +31,14 @@ export default class App extends Component {
       >
         <View style={styles.container}>
           <Text>Welcome to React Native!</Text>
-          <Button type={"outline"} loading>
+
+          <FTTextInput label={"Placeholder"}></FTTextInput>
+
+          <View style={{ height: 10 }} />
+
+          <Button type={"text"} loading>Text</Button>
+
+          <Button type={"Primary"} loading>
             Primary
           </Button>
           <View style={{ height: 10 }} />
@@ -52,7 +61,7 @@ export default class App extends Component {
           <Button type={"success"} title={"Info"} />
           <View style={{ height: 10 }} />
 
-          <Button type={"outline"} title={"Success"} />
+          <Button type={"outline"} title={"Outline"} loading/>
           <View style={{ height: 10 }} />
 
           <Button type={"info"} title={"Fail"} />
@@ -91,3 +100,6 @@ const styles = StyleSheet.create({
 //     );
 //   }
 // }
+
+
+/// xcrun simctl list devices
