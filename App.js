@@ -4,8 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableNativeFeedback,
-  TouchableOpacity
+  SafeAreaView
 } from "react-native";
 
 import Button from "./lib/Button";
@@ -14,6 +13,8 @@ import {
   Consumer,
   themes
 } from "./lib/ThemeProvider";
+import Grid from "./lib/complex_components/Grid";
+import EventCalender from "./lib/complex_components/EventCalender";
 
 export default class App extends Component {
   state = {
@@ -27,13 +28,17 @@ export default class App extends Component {
       <ThemeProvider
         value={{ theme: this.state.theme, toggleTheme: this.toggleTheme }}
       >
-        <View style={styles.container}>
-          <Text>Welcome to React Native!</Text>
+        <SafeAreaView style={styles.container}>
+          {/* <Text>Welcome to React Native!</Text>
           <Button type={"outline"} loading>
             Primary
-          </Button>
+          </Button> */}
           <View style={{ height: 10 }} />
 
+          <EventCalender />
+
+          {/* <Grid cols={5} rows={6} /> */}
+          {/* 
           <Button type={"rounded"}>rounded</Button>
           <View style={{ height: 10 }} />
 
@@ -55,14 +60,14 @@ export default class App extends Component {
           <Button type={"outline"} title={"Success"} />
           <View style={{ height: 10 }} />
 
-          <Button type={"info"} title={"Fail"} />
+          <Button type={"info"} title={"Fail"} /> */}
 
           {/* <ThemeContext.Consumer>
             {({ toggleTheme }) => (
               <ThemedButton title="Toggle theme" onPress={toggleTheme} />
             )}
           </ThemeContext.Consumer> */}
-        </View>
+        </SafeAreaView>
       </ThemeProvider>
     );
   }
