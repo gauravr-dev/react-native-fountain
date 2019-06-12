@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView
-} from "react-native";
+import { Platform, StyleSheet, Text, View, SafeAreaView } from "react-native";
 
 import Button from "./lib/Button";
 import {
@@ -23,6 +17,24 @@ export default class App extends Component {
 
   toggleTheme = () => {};
 
+  _renderItem = key => {
+    let cellKey = "cell" + key;
+    return (
+      <View
+        key={cellKey}
+        style={{
+          flex: 1,
+          backgroundColor: "#ff4",
+          justifyContent: "center",
+          alignItems: "center",
+          borderWidth: 1
+        }}
+      >
+        <Text style={{ textAlign: "center" }}>{cellKey}</Text>
+      </View>
+    );
+  };
+
   render() {
     return (
       <ThemeProvider
@@ -35,7 +47,26 @@ export default class App extends Component {
           </Button> */}
           <View style={{ height: 10 }} />
 
-          <EventCalender />
+          <Grid
+            cols={2}
+            rows={6}
+            renderCell={(key) => {
+              let cellKey = "cell" + key;
+              return (
+                <View
+                  key={cellKey}
+                  style={{
+                    flex: 1,
+                    backgroundColor: "#fff",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={{ textAlign: "center" }}>{cellKey}</Text>
+                </View>
+              );
+            }}
+          />
 
           {/* <Grid cols={5} rows={6} /> */}
           {/* 
@@ -76,8 +107,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#F5FCFF"
   }
 });
